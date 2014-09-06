@@ -1,96 +1,130 @@
 <!DOCTYPE html>
 <html>
- <head>
- 	<meta charset="UTF-8" />
- 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>Title</title>
- 	<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" type="text/css">
- 	<script type="text/javascript" src="js/jquery.js"></script>
- 	<script type="text/javascript" src="js/app.js"></script>
- 	<script type="text/javascript" src="js/jquery.mobile-1.4.3.min.js"></script>
- 	<script type="text/javascript" src="js/jqm-spinbox.min.js"></script>
- 	<script type="text/javascript" src="cordova.js"></script>
- 	<link rel="stylesheet" href="css/app.css" type="text/css">
- </head>
- <body>
- 	<div data-role="page" id="home" data-add-back-btn="true">
- 		<div data-role="header">
- 			<a href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-gear">Settings</a>
- 			<h1>DRINKR</h1>
- 		</div>
- 		<div data-role="content">
- 			<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
- 			<div class="ui-grid-b">
- 				<div class="ui-block-a">
- 				Current BAC: <div class="data" id="BAC">0.00</div>
- 				</div>
- 				
- 				<div class="ui-block-b">
- 				Peak BAC: <div class="data" id="PeakBAC">0.00</div>
- 				</div>
- 				
- 				<div class="ui-block-c">
- 				Total Drinks: <div class="data" id="totalDrinks">0</div>
- 				</div>
- 				
- 			</div>
- 			<form action="">
- 				Name: <input type="text" name="firstname"><br>
- 				Age: <input type="text" name="age"><br>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Title</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" type="text/css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.3.min.js"></script>
+	<script type="text/javascript" src="js/jqm-spinbox.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<link rel="stylesheet" href="css/app.css" type="text/css">
+</head>
+<body>
+	<div data-role="page" id="home" data-add-back-btn="true">
+		<div data-role="header">
+			<a href="#panel-push" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-gear">Settings</a>
+			<h1>DRINKR</h1>
+		</div>
+		<div data-role="content">
+			<form>
+				<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
+				<div class="ui-grid-b">
+					<div class="ui-block-a">
+						Current BAC: <div class="data" id="BAC">0.00</div>
+					</div>
 
- 				<div class="ui-grid-a">
- 					<div class="ui-block-a">
- 						<!-- Gender Picker -->
-		 				<fieldset data-role="controlgroup" data-type="horizontal">
-		 					<legend>Gender:</legend>
-		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
-		 					<label for="radio-choice-h-2a">Male</label>
-		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
-		 					<label for="radio-choice-h-2b">Female</label>
-		 				</fieldset>
-	 				</div>
-	 				
-	 				<div class="ui-block-b">
-		 				<!-- Height Picker -->
-		 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+					<div class="ui-block-b">
+						Peak BAC: <div class="data" id="PeakBAC">0.00</div>
+					</div>
 
-		 					<legend>Height:</legend>
-		 					<label for="select-native-14">Select A</label>
-		 					<select name="select-native-14" id="select-native-14">
-		 						<option value="#">select</option>
-		 						<option value="2">2'</option>
-		 						<option value="3">3'</option>
-		 						<option value="4">4'</option>
-		 						<option value="5">5'</option>
-		 						<option value="6">6'</option>
-		 						<option value="7">7'</option>
-		 					</select>
-		 					<label for="select-native-15">Select B</label>
-		 					<select name="select-native-15" id="select-native-15">
-		 						<option value="#">select</option>
-		 						<option value="0">0"</option>
-		 						<option value="1">1"</option>
-		 						<option value="2">2"</option>
-		 						<option value="3">3"</option>
-		 						<option value="4">4"</option>
-		 						<option value="5">5"</option>
-		 						<option value="6">6"</option>
-		 						<option value="7">7"</option>
-		 						<option value="8">8"</option>
-		 						<option value="9">9"</option>
-		 						<option value="10">10"</option>
-		 						<option value="11">11"</option>
-		 					</select>
-		 				</fieldset>
-		 			</div>
-	 			</div>
+					<div class="ui-block-c">
+						Total Drinks: <div class="data" id="totalDrinks">0</div>
+					</div>
 
- 				Weight: <input type="text" name="weight"><br> LBS
- 			</form>
- 		</div>
- 		<div data-role="footer" data-position="fixed">
- 			<h1>&copy; Kelly and Ryan Incorporated</h1>
- 		</div>
- 	</div>
- </body>
+				</div>
+
+				<a href="#popupNested" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-icon-bars ui-btn-icon-left ui-btn-b" data-transition="pop">Choose a drink...</a>
+				<div data-role="popup" id="popupNested" data-theme="none">
+					<ul data-role="listview">
+						<li><a href="#" data-rel="dialog">Beer</a></li>
+						<li><a href="#" data-rel="dialog">Cocktail</a></li>
+						<li><a href="#" data-rel="dialog">Shot</a></li>
+					</ul>
+				</div>
+
+				<div class="ui-corner-all" style="margin-bottom:8px;">
+					<div class="ui-bar ui-bar-a">
+						<h3>Beer</h3>
+					</div>
+					<div class="ui-body ui-body-a">
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<div class="ui-field-contain">
+									<label for="select-native-1">%ABV:</label>
+									<input type="text" data-role="spinbox" name="spin2" id="spin2" value="4" min="2" max="12" style="text-align: center;"> 
+								</div>
+							</div>
+							<div class="ui-block-b">
+								<div class="ui-field-contain">
+									<label for="select-native-1">Size:</label>
+									<select name="select-native-1" id="select-native-1">
+										<option value="7.7">Glass (7.7oz)</option>
+										<option value="12">Can (12oz)</option>
+										<option value="16">Pint (16oz)</option>
+										<option selected="selected" value="20">Bottle (20oz)</option>
+										<option value="26">Fifth (26oz)</option>
+										<option value="33.8">Liter (33.8oz)</option>
+										<option value="40">Fourty (40oz)</option>
+										<option value="other">Other...</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="center-wrapper">
+							-or-
+						</div>
+						<div class="ui-field-contain">
+							<label for="select-native-1">Beer:</label>
+							<select name="select-native-1" id="select-native-1">
+								<option value="1">The 1st Option</option>
+								<option value="2">The 2nd Option</option>
+								<option value="3">The 3rd Option</option>
+								<option value="4">The 4th Option</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="ui-corner-all" style="margin-bottom:8px;">
+					<div class="ui-bar ui-bar-a">
+						<h3>Cocktail</h3>
+					</div>
+					<div class="ui-body ui-body-a">
+						<p>Content</p>
+					</div>
+				</div>
+
+				<div class="ui-corner-all" style="margin-bottom:8px;">
+					<div class="ui-bar ui-bar-a">
+						<h3>Shot</h3>
+					</div>
+					<div class="ui-body ui-body-a">
+						<p>Content</p>
+					</div>
+				</div>
+
+				<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">Drink it!</div>
+
+			</form>
+		</div>
+
+		<div class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-inherit ui-panel-animate ui-panel-open" data-role="panel" id="panel-push" data-display="push">
+			<div class="ui-panel-inner"><ul class="ui-listview" data-role="listview">
+				<li class="ui-first-child" data-icon="delete"><a class="ui-btn ui-btn-icon-right ui-icon-delete" href="#" data-rel="close">Close</a></li>
+				<li><a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#">List item</a></li>
+				<li><a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#">List item</a></li>
+				<li class="ui-last-child"><a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#">List item</a></li>
+			</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
+
+
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h1>&copy; Kelly and Ryan Incorporated</h1>
+		</div>
+	</div>
+</body>
 </html>

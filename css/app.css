@@ -32,3 +32,10 @@ div.ui-select {
   top: 25%;
   transform: translateY(-278%);
 }
+
+.center-wrapper{
+text-align: center;
+}
+.center-wrapper * {
+margin: 0 auto;
+}
