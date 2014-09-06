@@ -263,14 +263,67 @@
 
 					<!-- Shot -->
 					<div id="shotcontent" class="ui-corner-all" style="margin-bottom:8px;" data-role="collapsible">
-						<div class="ui-bar ui-bar-a">
-							<h3>Shot</h3>
+					<div class="ui-bar ui-bar-a">
+						<h3>Shot</h3>
+					</div>
+					<div class="ui-body ui-body-a">
+						<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<div class="ui-block-a" style="display:inline-block; position:relative;">
+								<legend>%ABV in Shot:</legend>
+								<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="20" min="1"max="98" style="text-align: center;"> 
+							</div>
+							<br>
+							<br>
+							<br>
+							<br>
+							<div class="left-wrapper">
+								-or-
+							</div>
+							<br>
+							<div class="ui-block-a" style="display:inline-block; position:relative;">
+								<legend>Proof of Shot:</legend>
+								<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="80" min="10"max="200" style="text-align: center;"> 
+							</div>
 						</div>
-						<div class="ui-body ui-body-a">
-							<p>Content</p>
+						<div class="ui-block-b">
+							<div class="ui-block-a" style="display:inline-block; position:relative;">
+								<legend># Shots:</legend>
+								<div style="display:inline";>
+									<input type="text" data-mini="true" data-role="spinbox" name="weight" id="weight" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="1" min="1"max="3" style="text-align: center; width: 40px;"> 
+								</div>
+							</div>
 						</div>
 					</div>
+					<div class="center-wrapper">
+						-or-
+					</div>
+					<label for="select-native-1">Common Shots:</label>
+					<select name="select-native-1" id="select-native-1">
+						<option value="0">Select One</option>
+						<option value="1">Margarita</option>
+						<option value="2">Cosmopolitan</option>
+						<option value="3">Martini</option>
+						<option value="4">Vodka + Non-Alcoholic Mixer</option>
+						<option value="5">Rum + Non-Alcoholic Mixer</option>
+						<option value="6">Gin + Non-Alcoholic Mixer</option>
+						<option value="7">Whiskey + Non-Alcoholic Mixer</option>
+						<option value="8">Tequila Sunrise</option>
+						<option value="9">White Russian</option>
+						<option value="10">Moscow Mule</option>
+						<option value="11">Long Island Iced Tea</option>
+						<option value="12">Daquiri or Pina Colada</option>
+						<option value="13">Mojito</option>
+						<option value="14">Bloody Mary</option>
+						<option value="15">Sea/Bay Breeze</option>
+						<option value="16">Malibu Bay Breeze</option>
+						<option value="17">Jager Bomb</option>
+						<option value="18">Vegas Bomb</option>
+						<option value="19">Irish Car Bomb</option>
+						<option value="20">Mimosa</option>
+					</select>
 				</div>
+			</div>
 
 				<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">Drink it!</div>
 
