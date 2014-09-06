@@ -38,7 +38,8 @@
  			<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
  		</div>
  		<div data-role="content">
- 			<form action="">
+ 			
+ 			<form method="post">
  				Name: <input type="text" name="firstname"><br>
  				
  				<div class="ui-grid-a">
@@ -48,21 +49,6 @@
  					</div>
 
  					<div class="ui-block-b">
- 						<legend>Weight:</legend>
- 							<div style="display:inline";>
- 							<input type="text" data-mini="true" data-role="spinbox" name="spin3" id="spin3" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="120" min="60"max="500" style="text-align: center; width: 40px;"> 
- 						</div>
- 						<div style="display:inline;">
- 							lbs
- 						</div>
-
- 					</div>
-
- 				</div>
-				<br>
-				<br>
- 				<div class="ui-grid-a">
- 					<div class="ui-block-a">
  						<!-- Gender Picker -->
  						<legend>Gender:</legend>
 		 				<fieldset data-role="controlgroup" data-type="horizontal">
@@ -71,8 +57,22 @@
 		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
 		 					<label for="radio-choice-h-2b">Female</label>
 		 				</fieldset>
-		 			</div>
 
+ 					</div>
+
+ 				</div>
+				<br>
+				<br>
+ 				<div class="ui-grid-a">
+ 					<div class="ui-block-a">
+ 						<legend>Weight:</legend>
+ 						<div style="display:inline";>
+ 							<input type="text" data-mini="true" data-role="spinbox" name="spin3" id="spin3" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="120" min="60"max="500" style="text-align: center; width: 40px;"> 
+ 						</div>
+ 						<div style="display:inline;">
+ 							lbs
+ 						</div>
+		 			</div>
 		 			<div class="ui-block-b">
 		 				<legend>Height:</legend>
 		 				<div style="width:37%; display:inline-block;">
@@ -123,7 +123,9 @@
 		 				</fieldset>
 		 			</div> -->
 	 			</div>
-	 			
+	 			<br>
+	 			<br>
+	 		<button> Submit </button>
  			</form>
  		</div>
  		<div data-role="footer" data-position="fixed">
