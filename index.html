@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/app.css" type="text/css">
 </head>
 <body>
+	<!-- Begin initial setup dialog -->
 	<div data-role="page" id="settings" data-add-back-btn="true">
 		<div data-role="header">
 			<h1>DRINKR</h1>
@@ -42,17 +43,17 @@
 				</div>
 				<br>
 				<br>
- 				<div class="ui-grid-a">
- 					<div class="ui-block-a">
- 						<!-- Gender Picker -->
- 						<legend>Gender:</legend>
-		 				<fieldset data-role="controlgroup" data-type="horizontal">
-		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
-		 					<label for="radio-choice-h-2a">Male</label>
-		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
-		 					<label for="radio-choice-h-2b">Female</label>
-		 				</fieldset>
- 					</div>
+				<div class="ui-grid-a">
+					<div class="ui-block-a">
+						<!-- Gender Picker -->
+						<legend>Gender:</legend>
+						<fieldset data-role="controlgroup" data-type="horizontal">
+							<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+							<label for="radio-choice-h-2a">Male</label>
+							<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+							<label for="radio-choice-h-2b">Female</label>
+						</fieldset>
+					</div>
 
 					<div class="ui-block-b">
 						<legend>Height:</legend>
@@ -70,46 +71,282 @@
 							"
 						</div>
 					</div>
-	 				<!-- <div class="ui-block-b">
-		 				
-		 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+				</div>
 
-		 					<legend>Height:</legend>
-		 					<label for="select-native-14">Select A</label>
-		 					<select name="select-native-14" id="select-native-14">
-		 						<option value="#">select</option>
-		 						<option value="2">2'</option>
-		 						<option value="3">3'</option>
-		 						<option value="4">4'</option>
-		 						<option value="5">5'</option>
-		 						<option value="6">6'</option>
-		 						<option value="7">7'</option>
-		 					</select>
-		 					<label for="select-native-15">Select B</label>
-		 					<select name="select-native-15" id="select-native-15">
-		 						<option value="#">select</option>
-		 						<option value="0">0"</option>
-		 						<option value="1">1"</option>
-		 						<option value="2">2"</option>
-		 						<option value="3">3"</option>
-		 						<option value="4">4"</option>
-		 						<option value="5">5"</option>
-		 						<option value="6">6"</option>
-		 						<option value="7">7"</option>
-		 						<option value="8">8"</option>
-		 						<option value="9">9"</option>
-		 						<option value="10">10"</option>
-		 						<option value="11">11"</option>
-		 					</select>
-		 				</fieldset>
-		 			</div> -->
-		 		</div>
-		 		<button aria-disabled="false" class="ui-btn-hidden" type="submit" name="submit" value="submit-value">Submit</button>
-		 	</form>
-		 </div>
-		 <div data-role="footer" data-position="fixed">
-		 	<h1>&copy; Kelly and Ryan Incorporated</h1>
-		 </div>
+				<a href="#home" class="ui-btn ui-corner-all" data-transition="pop">Submit</a>
+			</form>
 		</div>
-	</body>
-	</html>
+	</div>
+	<!-- End initial setup dialogue -->
+
+	<!-- Main page -->
+	<div data-role="page" id="home" data-add-back-btn="true">
+		<div data-role="header">
+			<a href="#panel-push" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-gear">Settings</a>
+			<h1>DRINKR</h1>
+		</div>
+		<div data-role="content">
+			<form>
+				<h3 class="center-wrapper">Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
+
+				<!-- Current data -->
+				<div class="ui-grid-b ui-body-a ui-body ui-corner-all center-wrapper">
+					<div class="ui-block-a">
+						Current BAC: <div class="data" id="BAC">0.00</div>
+					</div>
+
+					<div class="ui-block-b">
+						Peak BAC: <div class="data" id="PeakBAC">0.00</div>
+					</div>
+
+					<div class="ui-block-c">
+						Total Drinks: <div class="data" id="totalDrinks">0</div>
+					</div>
+
+				</div>
+				<!-- end Current data -->
+
+				<div id="recent">
+					<h2>Recent Drinks:</h2>
+					<p id="recenttext" style="font-style: italic">No Drinks... Step it up!</p>
+					<div id="recenttable">
+						<table data-role="table" data-filter="true" data-input="#filterTable-input" class="ui-responsive" >
+						<thead>
+							<tr>
+								<th>Drink type</th>
+								<th>Strenght</th>
+								<th>Drink time</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- drink selection -->
+				<h2>Take a drink!</h2>
+				<div class="ui-field-contain">
+					<select name="drinktype" id="drinktype" data-native-menu="false">
+						<option value="choose-one" data-placeholder="true">Choose a drink...</option>
+						<option value="beershow">Beer</option>
+						<option value="cocktailshow">Cocktail</option>
+						<option value="shotshow">Shot</option>
+					</select>
+				</div>
+
+				<div data-role="collapsible-set" data-inset="false">
+					<!-- Beer -->
+					<div id="beercontent" class="ui-corner-all" style="margin-bottom:8px;" data-role="collapsible">
+						<div class="ui-bar ui-bar-a">
+							<h3>Beer</h3>
+						</div>
+						<div class="ui-body ui-body-a">
+							<div style="left-wrapper">
+								<label for="select-native-1">Size*:</label>
+								<select name="select-native-1" id="select-native-1">
+									<option value="7.7">Glass (7.7 fl oz)</option>
+									<option value="12">Can (12 fl oz)</option>
+									<option value="16">Pint (16 fl oz)</option>
+									<option selected="selected" value="20">Bottle (20 fl oz)</option>
+									<option value="33.8">Liter (33.8 fl oz)</option>
+									<option value="40">Fourty (40 fl oz)</option>
+									<option value="other">Other...</option>
+								</select>
+							</div>	
+							<br>
+							<br>
+
+
+							<div class="left-wrapper">
+								<label for="select-native-1">Beer:</label>
+								<select name="select-native-1" id="select-native-1">
+									<option value="0">Select One</option>
+									<option value="1">Bud Light</option>
+									<option value="2">Miller Light</option>
+									<option value="3">Yuengling</option>
+									<option value="4">Yuengling Light</option>
+									<option value="5">Coors Light</option>
+									<option value="6">Heineken</option>
+									<option value="7">PBR</option>
+									<option value="8">Natural Light</option>
+									<option value="9">Guiness</option>
+									<option value="10">Stella Artois</option>
+									<option value="11">Samuel Adams</option>
+									<option value="12">Red Stripe</option>
+									<option value="13">Bass</option>
+									<option value="14">Rolling Rock</option>
+									<option value="15">Busch</option>
+									<option value="16">Beck's</option>
+									<option value="17">Hoegaarden</option>
+									<option value="18">Hefeweisen</option>
+									<option value="19">Keystone Light</option>
+									<option value="20">Miller High Life</option>
+									<option value="21">Corona</option>
+									<option value="22">Corona Light</option>
+									<option value="23">Angry Orchard</option>
+									<option value="24">Redd's Apple Ale</option>
+									<option value="25">Woodchuck Hard Cider</option>
+									<option value="26">Magner's Vintage Cider</option>
+									<option value="27">Mike's Hard Lemonade</option>
+									<option value="28">Colt 45</option>
+									<option value="29">Hurricane</option>
+									<option value="30">Olde English</option>
+									<option value="31">Steele Reserve</option>
+								</select>
+							</div>
+							<br>
+							<div class="center-wrapper">
+								-or-
+							</div>
+
+							<div style="margin-left:auto; margin-right:auto;" class="center-wrapper;">
+								<legend >%ABV:</legend>
+								<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="4" min="2"max="12"> 
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Cocktail -->
+					<div id="cocktailcontent" class="ui-corner-all" style="margin-bottom:8px;" data-role="collapsible">
+						<div class="ui-bar ui-bar-a">
+							<h3>Cocktail</h3>
+						</div>
+						<div class="ui-body ui-body-a">
+							<div class="ui-grid-a">
+								<div class="ui-block-a">
+									<div class="ui-block-a" style="display:inline-block; position:relative;">
+										<legend>%ABV of Shots in Drink:</legend>
+										<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="4" min="2"max="12" style="text-align: center;"> 
+									</div>
+								</div>
+								<div class="ui-block-b">
+									<div class="ui-block-a" style="display:inline-block; position:relative;">
+										<legend># Shots in Drink:</legend>
+										<input type="text" data-mini="true" data-role="spinbox" name="numShots" id="numShots" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="2" min="1"max="10" style="text-align: center;"> 
+									</div>
+								</div>
+							</div>
+							<div class="center-wrapper">
+								-or-
+							</div>
+							<div class="ui-field-contain">
+								<label for="select-native-1">Common Drinks:</label>
+								<select name="select-native-1" id="select-native-1">
+									<option value="0">Select One</option>
+									<option value="1">Margarita</option>
+									<option value="2">Cosmopolitan</option>
+									<option value="3">Martini</option>
+									<option value="4">Vodka + Non-Alcoholic Mixer</option>
+									<option value="5">Rum + Non-Alcoholic Mixer</option>
+									<option value="6">Gin + Non-Alcoholic Mixer</option>
+									<option value="7">Whiskey + Non-Alcoholic Mixer</option>
+									<option value="8">Tequila Sunrise</option>
+									<option value="9">White Russian</option>
+									<option value="10">Moscow Mule</option>
+									<option value="11">Long Island Iced Tea</option>
+									<option value="12">Daquiri or Pina Colada</option>
+									<option value="13">Mojito</option>
+									<option value="14">Bloody Mary</option>
+									<option value="15">Sea/Bay Breeze</option>
+									<option value="16">Irish Car Bomb</option>
+									<option value="17">Jager Bomb</option>
+									<option value="18">Vegas Bomb</option>
+									<option value="19">Irish Car Bomb</option>
+									<option value="20">Mimosa</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Shot -->
+					<div id="shotcontent" class="ui-corner-all" style="margin-bottom:8px;" data-role="collapsible">
+					<div class="ui-bar ui-bar-a">
+						<h3>Shot</h3>
+					</div>
+					<div class="ui-body ui-body-a">
+						<div class="ui-grid-a">
+						<div class="ui-block-a">
+							<div class="ui-block-a" style="display:inline-block; position:relative;">
+								<legend>%ABV in Shot:</legend>
+								<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="20" min="1"max="98" style="text-align: center;"> 
+							</div>
+							<br>
+							<br>
+							<br>
+							<br>
+							<div class="left-wrapper">
+								-or-
+							</div>
+							<br>
+							<div class="ui-block-a" style="display:inline-block; position:relative;">
+								<legend>Proof of Shot:</legend>
+								<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="80" min="10"max="200" style="text-align: center;"> 
+							</div>
+						</div>
+						<div class="ui-block-b">
+							<div class="ui-block-a" style="display:inline-block; position:relative;">
+								<legend># Shots:</legend>
+								<div style="display:inline";>
+									<input type="text" data-mini="true" data-role="spinbox" name="weight" id="weight" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="1" min="1"max="3" style="text-align: center; width: 40px;"> 
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="center-wrapper">
+						-or-
+					</div>
+					<label for="select-native-1">Common Shots:</label>
+					<select name="select-native-1" id="select-native-1">
+						<option value="0">Select One</option>
+						<option value="1">Margarita</option>
+						<option value="2">Cosmopolitan</option>
+						<option value="3">Martini</option>
+						<option value="4">Vodka + Non-Alcoholic Mixer</option>
+						<option value="5">Rum + Non-Alcoholic Mixer</option>
+						<option value="6">Gin + Non-Alcoholic Mixer</option>
+						<option value="7">Whiskey + Non-Alcoholic Mixer</option>
+						<option value="8">Tequila Sunrise</option>
+						<option value="9">White Russian</option>
+						<option value="10">Moscow Mule</option>
+						<option value="11">Long Island Iced Tea</option>
+						<option value="12">Daquiri or Pina Colada</option>
+						<option value="13">Mojito</option>
+						<option value="14">Bloody Mary</option>
+						<option value="15">Sea/Bay Breeze</option>
+						<option value="16">Malibu Bay Breeze</option>
+						<option value="17">Jager Bomb</option>
+						<option value="18">Vegas Bomb</option>
+						<option value="19">Irish Car Bomb</option>
+						<option value="20">Mimosa</option>
+					</select>
+				</div>
+			</div>
+
+				<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">Drink it!</div>
+
+			</form>
+		</div>
+
+		<!-- Pop out settings -->
+		<div class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-inherit ui-panel-animate ui-panel-open" data-role="panel" id="panel-push" data-display="push">
+			<div class="ui-panel-inner"><ul class="ui-listview" data-role="listview">
+				<li class="ui-first-child" data-icon="delete"><a class="ui-btn ui-btn-icon-right ui-icon-delete" href="#" data-rel="close">Close</a></li>
+				<li><a class="ui-btn" href="#">Change Age</a></li>
+				<li><a class="ui-btn" href="#">Change Gender</a></li>
+				<li><a class="ui-btn" href="#">Change Height</a></li>
+				<li><a class="ui-btn" href="#">Change Name</a></li>
+				<li><a class="ui-btn" href="#">Change Weight</a></li>
+			</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
+			<!-- End pop out settings -->
+
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h1>&copy; Kelly and Ryan Incorporated</h1>
+		</div>
+	</div>
+</body>
+</html>
