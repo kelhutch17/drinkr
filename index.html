@@ -21,19 +21,19 @@
  			<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
  		</div>
  		<div data-role="content">
- 			<form action="">
- 				Name: <input type="text" name="firstname"><br>
+ 			<form action="tracker.html" method="get" data-transition="pop">
+ 				Name: <input type="text" name="name" id="name"><br>
  				
  				<div class="ui-grid-a">
  					<div class="ui-block-a" style="display:inline-block; position:relative;">
  						<legend>Age:</legend>
- 						<input type="text" data-mini="true" data-role="spinbox" name="spin3" id="spin3" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="21" min="15"max="100" style="text-align: center; width: 40px;"> 
+ 						<input type="text" data-mini="true" data-role="spinbox" name="age" id="age" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="21" min="15"max="100" style="text-align: center; width: 40px;"> 
  					</div>
 
  					<div class="ui-block-b">
  						<legend>Weight:</legend>
  							<div style="display:inline";>
- 							<input type="text" data-mini="true" data-role="spinbox" name="spin3" id="spin3" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="120" min="60"max="500" style="text-align: center; width: 40px;"> 
+ 							<input type="text" data-mini="true" data-role="spinbox" name="weight" id="weight" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="120" min="60"max="500" style="text-align: center; width: 40px;"> 
  						</div>
  						<div style="display:inline;">
  							lbs
@@ -106,6 +106,8 @@
 		 				</fieldset>
 		 			</div> -->
 	 			</div>
+
+	 			<button aria-disabled="false" class="ui-btn-hidden" type="submit" name="submit" value="submit-value">Submit</button>
 	 			
  			</form>
  		</div>
