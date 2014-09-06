@@ -40,44 +40,53 @@
  			<form action="">
  				Name: <input type="text" name="firstname"><br>
  				Age: <input type="text" name="age"><br>
- 				
- 				<fieldset data-role="controlgroup" data-type="horizontal">
- 					<legend>Gender:</legend>
- 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
- 					<label for="radio-choice-h-2a">Male</label>
- 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
- 					<label for="radio-choice-h-2b">Female</label>
- 				</fieldset>
- 				
- 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
- 					<legend>Height:</legend>
- 					<label for="select-native-14">Feet</label>
- 					<select name="select-native-14" id="select-native-14">
- 						<option value="#">select</option>
- 						<option value="#">2'</option>
- 						<option value="#">3'</option>
- 						<option value="#">4'</option>
- 						<option value="#">5'</option>
- 						<option value="#">6'</option>
- 						<option value="#">7'</option>
- 					</select>
- 					<label for="select-native-15">Inches</label>
- 					<select name="select-native-15" id="select-native-15">
- 						<option value="#">select</option>
- 						<option value="#">0"</option>
- 						<option value="#">1"</option>
- 						<option value="#">2"</option>
- 						<option value="#">3"</option>
- 						<option value="#">4"</option>
- 						<option value="#">5"</option>
- 						<option value="#">6"</option>
- 						<option value="#">7"</option>
- 						<option value="#">8"</option>
- 						<option value="#">9"</option>
- 						<option value="#">10"</option>
- 						<option value="#">11"</option>
- 					</select>
- 				</fieldset>
+
+ 				<div class="ui-grid-a">
+ 					<div class="ui-block-a">
+ 						<!-- Gender Picker -->
+		 				<fieldset data-role="controlgroup" data-type="horizontal">
+		 					<legend>Gender:</legend>
+		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+		 					<label for="radio-choice-h-2a">Male</label>
+		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+		 					<label for="radio-choice-h-2b">Female</label>
+		 				</fieldset>
+	 				</div>
+	 				
+	 				<div class="ui-block-b">
+		 				<!-- Height Picker -->
+		 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+
+		 					<legend>Height:</legend>
+		 					<label for="select-native-14">Select A</label>
+		 					<select name="select-native-14" id="select-native-14">
+		 						<option value="#">select</option>
+		 						<option value="2">2'</option>
+		 						<option value="3">3'</option>
+		 						<option value="4">4'</option>
+		 						<option value="5">5'</option>
+		 						<option value="6">6'</option>
+		 						<option value="7">7'</option>
+		 					</select>
+		 					<label for="select-native-15">Select B</label>
+		 					<select name="select-native-15" id="select-native-15">
+		 						<option value="#">select</option>
+		 						<option value="0">0"</option>
+		 						<option value="1">1"</option>
+		 						<option value="2">2"</option>
+		 						<option value="3">3"</option>
+		 						<option value="4">4"</option>
+		 						<option value="5">5"</option>
+		 						<option value="6">6"</option>
+		 						<option value="7">7"</option>
+		 						<option value="8">8"</option>
+		 						<option value="9">9"</option>
+		 						<option value="10">10"</option>
+		 						<option value="11">11"</option>
+		 					</select>
+		 				</fieldset>
+		 			</div>
+	 			</div>
 
  				Weight: <input type="text" name="weight"><br> LBS
  			</form>
