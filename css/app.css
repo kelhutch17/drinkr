@@ -23,8 +23,19 @@ div.ui-select {
  	background: #F357A1 !important;
  }
 
+.data {
+ 	font-size: 42px;
+ }
+
 .element {
   position: relative;
   top: 25%;
   transform: translateY(-282%);
+}
+
+.center-wrapper{
+text-align: center;
+}
+.center-wrapper * {
+margin: 0 auto;
 }

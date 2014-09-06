@@ -13,23 +13,6 @@
  	<link rel="stylesheet" href="css/app.css" type="text/css">
  </head>
  <body>
- 	<div data-role="page" id="login">
- 		<div data-role="content">
- 			<br><br><div data-role="collapsible" data-theme="b" data-content-theme="d" data-collapsed="false">
-			    <h4>Boilerplate Login Panel</h4>
-			    <div data-role="fieldcontain">
-			    <label for="textinput-fc">Username:</label>
-			    <input type="text" name="textinput-fc" id="textinput-fc" pl aceholder="Email Address / Username" value="">
-			</div>
-			<div data-role="fieldcontain">
-			    <label for="textinput-fc">Password:</label>
-			    <input type="text" name="textinput-fc" id="textinput-fc" placeholder="Password" value="">
-			</div>
- 			<a href="#home" data-role="button" data-transition="none">Click to Login</a>
-			</div>
- 		</div>
- 	</div>
-
  	<div data-role="page" id="home" data-add-back-btn="true">
  		<div data-role="header">
  			<h1>DRINKR</h1>
@@ -38,17 +21,32 @@
  			<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
  		</div>
  		<div data-role="content">
- 			
- 			<form method="post">
- 				Name: <input type="text" name="firstname"><br>
+
+ 			<form action="tracker.html" method="get" data-transition="pop">
+ 				Name: <input type="text" name="name" id="name"><br>
  				
  				<div class="ui-grid-a">
  					<div class="ui-block-a" style="display:inline-block; position:relative;">
  						<legend>Age:</legend>
- 						<input type="text" data-mini="true" data-role="spinbox" name="spin3" id="spin3" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="21" min="15"max="100" style="text-align: center; width: 40px;"> 
+ 						<input type="text" data-mini="true" data-role="spinbox" name="age" id="age" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="21" min="15"max="100" style="text-align: center; width: 40px;"> 
  					</div>
 
  					<div class="ui-block-b">
+ 						<legend>Weight:</legend>
+ 							<div style="display:inline";>
+ 							<input type="text" data-mini="true" data-role="spinbox" name="weight" id="weight" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="120" min="60"max="500" style="text-align: center; width: 40px;"> 
+ 						</div>
+ 						<div style="display:inline;">
+ 							lbs
+ 						</div>
+
+ 					</div>
+
+ 				</div>
+				<br>
+				<br>
+ 				<div class="ui-grid-a">
+ 					<div class="ui-block-a">
  						<!-- Gender Picker -->
  						<legend>Gender:</legend>
 		 				<fieldset data-role="controlgroup" data-type="horizontal">
@@ -122,15 +120,13 @@
 		 					</select>
 		 				</fieldset>
 		 			</div> -->
-	 			</div>
-	 			<br>
-	 			<br>
-	 		<button> Submit </button>
- 			</form>
- 		</div>
- 		<div data-role="footer" data-position="fixed">
- 			<h1>&copy; Kelly and Ryan Incorporated</h1>
- 		</div>
- 	</div>
- </body>
-</html>
+		 		</div>
+		 		<button aria-disabled="false" class="ui-btn-hidden" type="submit" name="submit" value="submit-value">Submit</button>
+		 	</form>
+		 </div>
+		 <div data-role="footer" data-position="fixed">
+		 	<h1>&copy; Kelly and Ryan Incorporated</h1>
+		 </div>
+		</div>
+	</body>
+	</html>
