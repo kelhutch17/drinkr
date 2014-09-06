@@ -15,12 +15,25 @@
  <body>
  	<div data-role="page" id="home" data-add-back-btn="true">
  		<div data-role="header">
+ 			<a href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-gear">Settings</a>
  			<h1>DRINKR</h1>
  		</div>
  		<div data-role="content">
  			<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
- 		</div>
- 		<div data-role="content">
+ 			<div class="ui-grid-b">
+ 				<div class="ui-block-a">
+ 				Current BAC: <div class="data" id="BAC">0.00</div>
+ 				</div>
+ 				
+ 				<div class="ui-block-b">
+ 				Peak BAC: <div class="data" id="PeakBAC">0.00</div>
+ 				</div>
+ 				
+ 				<div class="ui-block-c">
+ 				Total Drinks: <div class="data" id="totalDrinks">0</div>
+ 				</div>
+ 				
+ 			</div>
  			<form action="">
  				Name: <input type="text" name="firstname"><br>
  				Age: <input type="text" name="age"><br>

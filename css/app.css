@@ -22,3 +22,7 @@ div.ui-select {
   ::-webkit-selection {
  	background: #F357A1 !important;
  }
+
+.data {
+ 	font-size: 42px;
+ }
