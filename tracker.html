@@ -50,26 +50,92 @@
 						<h3>Beer</h3>
 					</div>
 					<div class="ui-body ui-body-a">
+						<div style="left-wrapper">
+							<label for="select-native-1">Size*:</label>
+							<select name="select-native-1" id="select-native-1">
+								<option value="7.7">Glass (7.7 fl oz)</option>
+								<option value="12">Can (12 fl oz)</option>
+								<option value="16">Pint (16 fl oz)</option>
+								<option selected="selected" value="20">Bottle (20 fl oz)</option>
+								<option value="33.8">Liter (33.8 fl oz)</option>
+								<option value="40">Fourty (40 fl oz)</option>
+								<option value="other">Other...</option>
+							</select>
+						</div>	
+						<br>
+						<br>
+						
+						
+						<div class="left-wrapper">
+							<label for="select-native-1">Beer:</label>
+							<select name="select-native-1" id="select-native-1">
+								<option value="0">Select One</option>
+								<option value="1">Bud Light</option>
+								<option value="2">Miller Light</option>
+								<option value="3">Yuengling</option>
+								<option value="4">Yuengling Light</option>
+								<option value="5">Coors Light</option>
+								<option value="6">Heineken</option>
+								<option value="7">PBR</option>
+								<option value="8">Natural Light</option>
+								<option value="9">Guiness</option>
+								<option value="10">Stella Artois</option>
+								<option value="11">Samuel Adams</option>
+								<option value="12">Red Stripe</option>
+								<option value="13">Bass</option>
+								<option value="14">Rolling Rock</option>
+								<option value="15">Busch</option>
+								<option value="16">Beck's</option>
+								<option value="17">Hoegaarden</option>
+								<option value="18">Hefeweisen</option>
+								<option value="19">Keystone Light</option>
+								<option value="20">Miller High Life</option>
+								<option value="21">Corona</option>
+								<option value="22">Corona Light</option>
+								<option value="23">Angry Orchard</option>
+								<option value="24">Redd's Apple Ale</option>
+								<option value="25">Woodchuck Hard Cider</option>
+								<option value="26">Magner's Vintage Cider</option>
+								<option value="27">Mike's Hard Lemonade</option>
+								<option value="28">Colt 45</option>
+								<option value="29">Hurricane</option>
+								<option value="30">Olde English</option>
+								<option value="31">Steele Reserve</option>
+							</select>
+						</div>
+						<br>
+						<div class="center-wrapper">
+							-or-
+						</div>
+
+						<div style="margin-left:auto; margin-right:auto;" class="center-wrapper;">
+							<legend >%ABV:</legend>
+							<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="4" min="2"max="12"> 
+						</div>
+
+					</div>
+
+
+					<div class="ui-corner-all" style="margin-bottom:8px;">
+						<div class="ui-bar ui-bar-a">
+						<h3>Cocktail</h3>
+					</div>
+					<div class="ui-body ui-body-a">
 						<div class="ui-grid-a">
 							<div class="ui-block-a">
-								<div class="ui-field-contain">
+<!-- 								<div style="display:inline;" class="ui-field-contain">
 									<label for="select-native-1">%ABV:</label>
-									<input type="text" data-role="spinbox" name="spin2" id="spin2" value="4" min="2" max="12" style="text-align: center;"> 
+									<input type="text" data-role="spinbox" name="abv" id="abv" value="4" min="2" max="12" style="text-align: center;"> 
+								</div> -->
+								<div class="ui-block-a" style="display:inline-block; position:relative;">
+									<legend>%ABV of Shots in Drink:</legend>
+									<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="4" min="2"max="12" style="text-align: center;"> 
 								</div>
 							</div>
 							<div class="ui-block-b">
-								<div class="ui-field-contain">
-									<label for="select-native-1">Size:</label>
-									<select name="select-native-1" id="select-native-1">
-										<option value="7.7">Glass (7.7oz)</option>
-										<option value="12">Can (12oz)</option>
-										<option value="16">Pint (16oz)</option>
-										<option selected="selected" value="20">Bottle (20oz)</option>
-										<option value="26">Fifth (26oz)</option>
-										<option value="33.8">Liter (33.8oz)</option>
-										<option value="40">Fourty (40oz)</option>
-										<option value="other">Other...</option>
-									</select>
+								<div class="ui-block-a" style="display:inline-block; position:relative;">
+									<legend># Shots in Drink:</legend>
+									<input type="text" data-mini="true" data-role="spinbox" name="numShots" id="numShots" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="2" min="1"max="10" style="text-align: center;"> 
 								</div>
 							</div>
 						</div>
@@ -77,23 +143,31 @@
 							-or-
 						</div>
 						<div class="ui-field-contain">
-							<label for="select-native-1">Beer:</label>
+							<label for="select-native-1">Common Drinks:</label>
 							<select name="select-native-1" id="select-native-1">
-								<option value="1">The 1st Option</option>
-								<option value="2">The 2nd Option</option>
-								<option value="3">The 3rd Option</option>
-								<option value="4">The 4th Option</option>
+								<option value="0">Select One</option>
+								<option value="1">Margarita</option>
+								<option value="2">Cosmopolitan</option>
+								<option value="3">Martini</option>
+								<option value="4">Vodka + Non-Alcoholic Mixer</option>
+								<option value="5">Rum + Non-Alcoholic Mixer</option>
+								<option value="6">Gin + Non-Alcoholic Mixer</option>
+								<option value="7">Whiskey + Non-Alcoholic Mixer</option>
+								<option value="8">Tequila Sunrise</option>
+								<option value="9">White Russian</option>
+								<option value="10">Moscow Mule</option>
+								<option value="11">Long Island Iced Tea</option>
+								<option value="12">Daquiri or Pina Colada</option>
+								<option value="13">Mojito</option>
+								<option value="14">Bloody Mary</option>
+								<option value="15">Sea/Bay Breeze</option>
+								<option value="16">Irish Car Bomb</option>
+								<option value="17">Jager Bomb</option>
+								<option value="18">Vegas Bomb</option>
+								<option value="19">Irish Car Bomb</option>
+								<option value="20">Mimosa</option>
 							</select>
 						</div>
-					</div>
-				</div>
-
-				<div class="ui-corner-all" style="margin-bottom:8px;">
-					<div class="ui-bar ui-bar-a">
-						<h3>Cocktail</h3>
-					</div>
-					<div class="ui-body ui-body-a">
-						<p>Content</p>
 					</div>
 				</div>
 
