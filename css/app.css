@@ -1,41 +1,41 @@
 /* CSS Code for this PhoneGap App to Go Here */
 
- body,.ui-page
- {
- 	background: #FFFFFF;
- }
- .ui-page {
-   -webkit-animation-fill-mode: both;
- }
+body,.ui-page
+{
+	background: #FFFFFF;
+}
+.ui-page {
+	-webkit-animation-fill-mode: both;
+}
 
 div.ui-select {
 	font-size: 16px;
 
- }
+}
 
- ::selection {
- 	background: #F357A1 !important;
- }
-  ::-moz-selection {
- 	background: #F357A1 !important;
- }
-  ::-webkit-selection {
- 	background: #F357A1 !important;
- }
+::selection {
+	background: #F357A1 !important;
+}
+::-moz-selection {
+	background: #F357A1 !important;
+}
+::-webkit-selection {
+	background: #F357A1 !important;
+}
 
 .data {
- 	font-size: 42px;
- }
+	font-size: 42px;
+}
 
 .element {
-  position: relative;
-  top: 25%;
-  transform: translateY(-282%);
+	position: relative;
+	top: 25%;
+	transform: translateY(-282%);
 }
 
 .center-wrapper{
-text-align: center;
+	text-align: center;
 }
 .center-wrapper * {
-margin: 0 auto;
+	margin: 0 auto;
 }

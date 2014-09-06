@@ -87,8 +87,10 @@
 		</div>
 		<div data-role="content">
 			<form>
-				<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
-				<div class="ui-grid-b">
+				<h3 class="center-wrapper">Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
+
+				<!-- Current data -->
+				<div class="ui-grid-b ui-body-a ui-body ui-corner-all center-wrapper">
 					<div class="ui-block-a">
 						Current BAC: <div class="data" id="BAC">0.00</div>
 					</div>
@@ -102,7 +104,29 @@
 					</div>
 
 				</div>
+				<!-- end Current data -->
 
+				<div id="recent">
+					<h2>Recent Drinks:</h2>
+					<p id="recenttext" style="font-style: italic">No Drinks... Step it up!</p>
+					<div id="recenttable">
+						<table data-role="table" data-filter="true" data-input="#filterTable-input" class="ui-responsive" >
+						<thead>
+							<tr>
+								<th>Drink type</th>
+								<th>Strenght</th>
+								<th>Drink time</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- drink selection -->
+				<h2>Take a drink!</h2>
 				<div class="ui-field-contain">
 					<select name="drinktype" id="drinktype" data-native-menu="false">
 						<option value="choose-one" data-placeholder="true">Choose a drink...</option>
@@ -257,9 +281,11 @@
 		<div class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-inherit ui-panel-animate ui-panel-open" data-role="panel" id="panel-push" data-display="push">
 			<div class="ui-panel-inner"><ul class="ui-listview" data-role="listview">
 				<li class="ui-first-child" data-icon="delete"><a class="ui-btn ui-btn-icon-right ui-icon-delete" href="#" data-rel="close">Close</a></li>
-				<li><a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#">Change Data</a></li>
-				<li><a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#">List item</a></li>
-				<li class="ui-last-child"><a class="ui-btn ui-btn-icon-right ui-icon-carat-r" href="#">List item</a></li>
+				<li><a class="ui-btn" href="#">Change Age</a></li>
+				<li><a class="ui-btn" href="#">Change Gender</a></li>
+				<li><a class="ui-btn" href="#">Change Height</a></li>
+				<li><a class="ui-btn" href="#">Change Name</a></li>
+				<li><a class="ui-btn" href="#">Change Weight</a></li>
 			</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
 			<!-- End pop out settings -->
 

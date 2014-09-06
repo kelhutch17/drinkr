@@ -28,20 +28,9 @@ $(document).on( "pagecreate", function() {
 			case "shotshow":
 			$('#shotcontent').collapsible("expand");
 		} 
-		
 	});
 
-	$("#beershow").click(function(){
-		
-	});
-
-	$("#cocktailshow").click(function(){
-		
-	});
-
-	$("#shotshow").click(function(){
-		
-	});
+	$("#recenttable").hide();
 
 
 });
