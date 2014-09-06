@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns = "http://www.w3.org/ns/widgets"
+<widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.example"
+        id        = "com.drinkr.app"
         versionCode="10" 
         version   = "1.0.0">
 
     <!-- versionCode is optional and Android only -->
 
-    <name>PhoneGap Example</name>
+    <name>drinkr</name>
 
     <description>
-        An example for phonegap build docs. 
+        drinkr doesn't care that you only use it when you're drunk
     </description>
 
-    <author href="https://appsonmob.com" email="rahat@appsonmob.com">
-        AppMechanic
+    <author href="http://ryanrapini.com" email="ryanrapini@gmail.com">
+        Kelly Hutchison and Ryan Rapini
     </author>
 
-    <preference name="phonegap-version" value="2.7.0" />
+    <preference name="phonegap-version" value="3.5.0" />
+
+    <gap:platform name="ios" />
+    <gap:platform name="android" />
+    <gap:platform name="winphone" />
 
 </widget>
