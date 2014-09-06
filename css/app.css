@@ -7,3 +7,12 @@
  .ui-page {
    -webkit-animation-fill-mode: both;
  }
+
+div.ui-select {
+	font-size: 16px;
+
+ }
+
+ div {
+ 	background-color: #F357A1 !important;
+ }
