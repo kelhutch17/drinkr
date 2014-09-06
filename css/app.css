@@ -22,3 +22,9 @@ div.ui-select {
   ::-webkit-selection {
  	background: #F357A1 !important;
  }
+
+.element {
+  position: relative;
+  top: 25%;
+  transform: translateY(-278%);
+}

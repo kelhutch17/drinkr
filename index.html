@@ -40,22 +40,57 @@
  		<div data-role="content">
  			<form action="">
  				Name: <input type="text" name="firstname"><br>
- 				Age: <input type="text" name="age"><br>
+ 				
+ 				<div class="ui-grid-a">
+ 					<div class="ui-block-a" style="display:inline-block; position:relative;">
+ 						<legend>Age:</legend>
+ 						<input type="text" data-mini="true" data-role="spinbox" name="spin3" id="spin3" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="21" min="15"max="100" style="text-align: center; width: 40px;"> 
+ 					</div>
 
+ 					<div class="ui-block-b">
+ 						<legend>Weight:</legend>
+ 							<div style="display:inline";>
+ 							<input type="text" data-mini="true" data-role="spinbox" name="spin3" id="spin3" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="120" min="60"max="500" style="text-align: center; width: 40px;"> 
+ 						</div>
+ 						<div style="display:inline;">
+ 							lbs
+ 						</div>
+
+ 					</div>
+
+ 				</div>
+				<br>
+				<br>
  				<div class="ui-grid-a">
  					<div class="ui-block-a">
  						<!-- Gender Picker -->
+ 						<legend>Gender:</legend>
 		 				<fieldset data-role="controlgroup" data-type="horizontal">
-		 					<legend>Gender:</legend>
 		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
 		 					<label for="radio-choice-h-2a">Male</label>
 		 					<input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
 		 					<label for="radio-choice-h-2b">Female</label>
 		 				</fieldset>
-	 				</div>
-	 				
-	 				<div class="ui-block-b">
-		 				<!-- Height Picker -->
+		 			</div>
+
+		 			<div class="ui-block-b">
+		 				<legend>Height:</legend>
+		 				<div style="width:37%; display:inline-block;">
+		 					<input type="text" data-role="spinbox" name="spin2" id="spin2" data-options="{&quot;type&quot;:&quot;vertical&quot;}" value="5" min="3" max="7" style="text-align: center;"> 
+		 				</div>
+		 				<div class="element" style="display:inline-block; position:relative;">
+		 					'
+		 				</div>
+
+		 				<div style="width:37%; display:inline-block;">
+		 					<input type="text" data-role="spinbox" name="spin2" id="spin2" data-options="{&quot;type&quot;:&quot;vertical&quot;}" value="0" min="0" max="11" style="text-align: center;"> 
+		 				</div>
+		 				<div class="element" style="display:inline-block; position:relative;">
+		 					"
+		 				</div>
+		 			</div>
+	 				<!-- <div class="ui-block-b">
+		 				
 		 				<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
 
 		 					<legend>Height:</legend>
@@ -86,10 +121,9 @@
 		 						<option value="11">11"</option>
 		 					</select>
 		 				</fieldset>
-		 			</div>
+		 			</div> -->
 	 			</div>
-
- 				Weight: <input type="text" name="weight"><br> LBS
+	 			
  			</form>
  		</div>
  		<div data-role="footer" data-position="fixed">
