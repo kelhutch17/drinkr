@@ -67,6 +67,48 @@
 	});
 
 	/*Settings menu control*/
+	$('#editage').click(function(){
+		$('#editagepicker').val(data.age);
+	});
+
+	$('#editgender').click(function(){
+		if (data.gender == "male") {
+			$('#editgenderpickermale').prop('checked', true);
+			$('#editgenderpickerfemale').prop('checked', false);
+		}
+		else {
+			$('#editgenderpickermale').prop('checked', false);
+			$('#editgenderpickerfemale').prop('checked', true);
+		}
+	});
+
+	$('#editheight').click(function(){
+		var heightobj = heightToFeet(data.height);
+		$('#editheightftpicker').val(heightobj.feet);
+		$('#editheightinpicker').val(heightobj.inches);
+	});
+
+	$('#editname').click(function(){
+		$('#editnamepicker').val(data.name);
+	});
+
+	$('#editweight').click(function(){
+		$('#editweightpicker').val(data.weight);
+	});
+
+	/* called when anything in the edit menu is submitted */
+	$('.editsubmit').on('click', function(){
+		console.log("Updating all");
+		data.age = $('#editagepicker').val();
+		data.gender = $('input[name=editgenderpicker]:checked').val();
+		var heightobj = heightToInches($('#editheightftpicker').val(),$('#editheightinpicker').val());
+		data.height = heightobj
+		data.name = $('#editnamepicker').val();
+		data.weight = $('#editweightpicker').val();
+		stashData(data);
+		populateContainers(data);
+	});
+
 	$('#cleardata').click(function(){
 		console.log("clearing everything!");
 		localStorage.clear();

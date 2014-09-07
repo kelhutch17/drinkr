@@ -44,7 +44,12 @@ div.ui-select {
 
 .center-wrapper{
 	text-align: center;
+	align:center;
 }
 .center-wrapper * {
 	margin: 0 auto;
+}
+
+.ui-popup .ui-field-contain .ui-controlgroup-controls {
+	width: auto !important;
 }

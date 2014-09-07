@@ -79,9 +79,10 @@
 					</div>
 				</div>
 			</form>
-				<button class="ui-btn ui-corner-all" id="initialsubmit">Submit</a>
+			<button class="ui-btn ui-corner-all" id="initialsubmit">Submit</button>
 		</div>
 	</div>
+
 	<!-- End initial setup dialogue -->
 
 	<!-- Main page -->
@@ -319,20 +320,106 @@
 		<div class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-inherit ui-panel-animate ui-panel-open" data-role="panel" id="panel-push" data-display="push">
 			<div class="ui-panel-inner"><ul class="ui-listview" data-role="listview">
 				<li class="ui-first-child" data-icon="delete"><a class="ui-btn ui-btn-icon-right ui-icon-delete" href="#" data-rel="close">Close</a></li>
-				<li><a class="ui-btn" id="agechanger">Change Age (<span class="agecontainer"></span>)</a></li>
-				<li><a class="ui-btn" id="genderchanger">Change Gender (<span class="gendercontainer"></span>)</a></li>
-				<li><a class="ui-btn" id="heightchanger">Change Height (<span class="heightftcontainer"></span>'<span class="heightincontainer"></span>")</a></li>
-				<li><a class="ui-btn" id="namechanger">Change Name (<span class="namecontainer"></span>)</a></li>
-				<li><a class="ui-btn" id="weightchanger">Change Weight (<span class="weightcontainer"></span>)</a></li>
-			</ul><br><br><button class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left" id="cleardata">Clear all data!!!</button></div>
-			<!-- End pop out settings -->
-
-		</div>
-
-		<div data-role="footer" data-position="fixed">
-			<h1>&copy; Kelly and Ryan Incorporated</h1>
+				<li><a id="editage" class="ui-btn" href="#popupAge" data-rel="popup" data-position-to="window" data-transition="pop">Change Age (<span class="agecontainer"></span>)</a></li>
+				<li><a class="ui-btn" id="editgender" href="#popupgender" data-rel="popup" data-position-to="window" data-transition="pop">Change Gender (<span class="gendercontainer"></span>)</a></li>
+				<li><a class="ui-btn" id="editheight"  href="#popupheight" data-rel="popup" data-position-to="window" data-transition="pop">Change Height (<span class="heightftcontainer"></span>'<span class="heightincontainer"></span>")</a></li>
+				<li><a class="ui-btn" id="editname"  href="#popupname" data-rel="popup" data-position-to="window" data-transition="pop">Change Name (<span class="namecontainer"></span>)</a></li>
+				<li><a class="ui-btn" id="editweight"  href="#popupweight" data-rel="popup" data-position-to="window" data-transition="pop">Change Weight (<span class="weightcontainer"></span>)</a></li>
+			</ul><br><br><button class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left" id="cleardata">Clear all data!!!</button>
 		</div>
 	</div>
+
+	<!-- Age edit -->
+	<div data-role="popup" id="popupAge" data-theme="a" class="ui-corner-all">
+		<div style="padding:10px 20px;">
+			<h3>Please choose your age</h3>
+			<div data-role="fieldcontain" class="center-wrapper">
+				<input type="text" data-role="spinbox" name="age" id="editagepicker" value="24" min="16" max="100" />
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Cancel</a></div>
+				<div class="ui-block-b"><a href="#" data-rel="back" class="editsubmit ui-btn ui-corner-all ui-shadow">Submit</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- end age edit -->
+	
+	<!-- gender edit -->
+	<div data-role="popup" id="popupgender" data-theme="a" class="ui-corner-all">
+		<div style="padding:10px 20px;">
+			<h3>Please choose your gender</h3>
+			<div data-role="fieldcontain" class="center-wrapper">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<input type="radio" name="editgenderpicker" id="editgenderpickermale" value="male">
+					<label for="editgenderpickermale">Male</label>
+					<input type="radio" name="editgenderpicker" id="editgenderpickerfemale" value="female">
+					<label for="editgenderpickerfemale">Female</label>
+				</fieldset>
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Cancel</a></div>
+				<div class="ui-block-b"><a href="#" data-rel="back" class="editsubmit ui-btn ui-corner-all ui-shadow">Submit</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- end age edit -->
+	
+	<!-- Age edit -->
+	<div data-role="popup" id="popupheight" data-theme="a" class="ui-corner-all">
+		<div style="padding:10px 20px;" class="center-wrapper">
+			<h3>Please choose your height</h3>
+			<div class="ui-grid-a">
+				<div class="ui-block-a">
+					<input type="text" data-role="spinbox" name="heightft" id="editheightftpicker" data-options="{&quot;type&quot;:&quot;vertical&quot;}" value="5" min="3" max="7" style="text  -align: center;"> FT
+				</div>
+				<div class="ui-block-b">
+					<input type="text" data-role="spinbox" name="heightin" id="editheightinpicker" data-options="{&quot;type&quot;:&quot;vertical&quot;}" value="0" min="0" max="11" style="text-align: center;"> IN
+				</div>
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Cancel</a></div>
+				<div class="ui-block-b"><a href="#" data-rel="back" class="editsubmit ui-btn ui-corner-all ui-shadow">Submit</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- end age edit -->
+	
+	<!-- Age edit -->
+	<div data-role="popup" id="popupname" data-theme="a" class="ui-corner-all">
+		<div style="padding:10px 20px;">
+			<h3>Please choose your name</h3>
+			<div data-role="fieldcontain" class="center-wrapper">
+				<input type="text" name="name" id="editnamepicker">
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Cancel</a></div>
+				<div class="ui-block-b"><a href="#" data-rel="back" class="editsubmit ui-btn ui-corner-all ui-shadow">Submit</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- end age edit -->
+	
+	<!-- Age edit -->
+	<div data-role="popup" id="popupweight" data-theme="a" class="ui-corner-all">
+		<div style="padding:10px 20px;">
+			<h3>Please choose your weight</h3>
+			<div data-role="fieldcontain" class="center-wrapper">
+				<input type="text" data-role="spinbox" name="weight" id="editweightpicker" value="120" min="75" max="500" />
+			</div>
+			<div class="ui-grid-a">
+				<div class="ui-block-a"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow">Cancel</a></div>
+				<div class="ui-block-b"><a href="#" data-rel="back" class="editsubmit ui-btn ui-corner-all ui-shadow">Submit</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- end age edit -->
+	
+	<!-- End pop out settings -->
+
+	<div data-role="footer" data-position="fixed">
+		<h1>&copy; Kelly and Ryan Incorporated</h1>
+	</div>
+</div>
 </body>
 <!-- curl --data "api_token=d43534d3-c41e-b018-97c6-9d1f4c106ddf&username={{username}}" https://api.justyo.co/yo/ -->
 </html>
