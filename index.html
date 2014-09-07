@@ -26,19 +26,24 @@
 
 				<div class="ui-grid-a">
 					<div class="ui-block-a" style="display:inline-block; position:relative;">
-						<legend>Age:</legend>
-						<input type="text" data-mini="true" data-role="spinbox" name="age" id="age" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="21" min="15" max="100" style="text-align: center; width: 40px;"> 
+						<div data-role="fieldcontain">
+							<label for="age">Age:</label>
+							<div style="width:50px;">
+								<input type="text" data-role="spinbox" data-mini="true" name="age" id="age" data-options='{"type":"vertical"}' value="21" min="16" max="100" />
+							</div>
+						</div>
 					</div>
 
 					<div class="ui-block-b">
-						<legend>Weight:</legend>
-						<div style="display:inline-block;">
-							<input type="text" data-mini="true" data-role="spinbox" name="weight" id="weight" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="120" min="60" max="500" style="text-align: center; width: 40px;"> 
+						<div data-role="fieldcontain">
+							<label for="weight">Weight:</label>
+							<div style="width:50px;">
+								<input type="text" data-role="spinbox" data-mini="true" name="weight" id="weight" data-options='{"type":"vertical"}' value="120" min="75" max="500" />
+							</div>
+							<div class="element" style="display:inline-block; position:relative; padding-left:55px;">
+								lbs
+							</div>
 						</div>
-						<div style="display:inline-block;">
-							lbs
-						</div>
-
 					</div>
 
 				</div>
