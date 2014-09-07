@@ -34,3 +34,10 @@ $(document).on( "pagecreate", function() {
 
 
 });
+
+
+function solveBAC(ounces, percent, weight, hours) {
+	var result = (ounces * percent * 0.075 / weight) - (hours * 0.015);
+	result = Math.round(result * 1000) / 1000;
+	return result
+}
