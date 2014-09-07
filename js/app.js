@@ -81,6 +81,14 @@
 		addDrink("shot");
 	});
 
+	$("#beername").change(function(){
+		$("#beerabv").val('');
+	});
+
+	$("#shotname").change(function(){
+		$("#shotabv").val('');
+	});
+
 	/*Settings menu control*/
 	$('#editage').click(function(){
 		$('#editagepicker').val(data.age);
@@ -160,7 +168,6 @@
 		$(".heightincontainer").text(heightobj.inches);
 		$(".namecontainer").text(data.name);
 		$(".weightcontainer").text(data.weight);
-		$(".totalDrinks").text(data.totalDrinks);
 	}
 	catch(err) {
 		console.log(err);
@@ -177,6 +184,7 @@
 	localStorage.setItem('name',data.name);
 	localStorage.setItem('weight',data.weight);
 	localStorage.setItem('totalDrinks', data.totalDrinks);
+	localStorage.setItem('BAC', data.BAC);
 	return true;
   }
 
@@ -189,6 +197,7 @@
 	data.name = localStorage.getItem('name');
 	data.weight = localStorage.getItem('weight');
 	data.totalDrinks = localStorage.getItem('totalDrinks');
+	data.BAC = localStorage.getItem('BAC');
 	return data;
   }
 
@@ -204,6 +213,7 @@ function addDrink(type){
 		$('#recenttable').show();
 		$('#recenttext').hide();
 	}
+
 
 	var drink = {};
 	switch(type){
@@ -227,30 +237,37 @@ function addDrink(type){
 		"<td>" + time + "</td>";
 
 	$("#recentdrinks").find('tbody').append($('<tr>').html(fields));
-
-	// time since first drink
-	var timeSinceFirstDrink = Date.now();
-
-
+	
 	// track total drinks
 	var totalDrinks = parseInt($("#totalDrinks").val());
 	totalDrinks = isNaN(totalDrinks) ? 0 : totalDrinks;
-    totalDrinks++;
+	totalDrinks++;
 	$("#totalDrinks").text(totalDrinks.toString());
 	$("#totalDrinks").val(totalDrinks);
 
+	var BAC;
 	// oz % wt hrs --
-	var BAC = solveBAC(drink.size, parseInt(drink.percent), 160, 2);//localStorage.getItem('weight'), 1);
+	BAC = solveBAC(drink.size, parseInt(drink.percent), localStorage.getItem('weight'), .20);
 	
-	var oldBAC = parseInt($("#BAC").val());
-	oldBAC = isNaN(oldBAC) ? BAC : (oldBAC + +BAC);
-	$("#BAC").text(oldBAC.toString());
-	$("#BAC").val(oldBAC);
+	var oldBAC = $("#BAC").val();
+
+	if ($("#BAC").val() === "") {
+		oldBAC= BAC;
+	}
+	else {	
+		oldBAC = +oldBAC + BAC;
+	}
+
+	$("#BAC").text(oldBAC.toFixed(3).toString());
+    $("#BAC").val(oldBAC);
 
 	if (BAC >= .2)
 	{
 		//curl --data "api_token=d43534d3-c41e-b018-97c6-9d1f4c106ddf&username={{username}}"  https:%2F/api.justyo.co/yo/);
 	}
+
+	var lastDrink = Date.now();
+
 
 }
 
