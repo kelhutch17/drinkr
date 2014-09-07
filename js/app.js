@@ -1,4 +1,9 @@
-/* Custom Javascript for this PhoneGap APP */
+
+/*
+   JQuery Mobile Init Functions
+  ==============================
+*/
+
 $(document).on("mobileinit", function () {
 	console.log("Initialize jQuery Mobile Phonegap Enhancement Configurations")
 	// Make your jQuery Mobile framework configuration changes here!
@@ -10,6 +15,16 @@ $(document).on("mobileinit", function () {
 });
 
 $(document).on( "pagecreate", function() {
+	/* If we already have name set, we assume we have all the info and we don't
+	show the user the initial setup screen */
+	if (localStorage.getItem("name") != null){
+		var data = retrieveData();
+		populateContainers(data);
+		$.mobile.changePage('#home', {changeHash: false});
+	}
+
+	/* Setup various event handlers here */
+
 	$('#drinktype').on('change', function () {
 		var $this = $(this),
 		val = $this.val()
@@ -28,11 +43,100 @@ $(document).on( "pagecreate", function() {
 
 	$('#recenttable').hide();
 
-	$('#initialsubmit').click(function({
-		
+	$('#initialsubmit').click(function(){
+		var data = {};
+		data.age = $('#age').val();
+		data.gender = $('input[name=gender]:checked').val();
+		var heightft = $('#heightft').val();
+		var heightin = $('#heightin').val();
+		data.height = heightToInches(heightft, heightin);
+		data.name = $('#name').val();
+		data.weight = $('#weight').val();
+
+		/*Store all our data into localStorage*/
+		stashData(data);
+
+		heightobj = heightToFeet(data.height);
+
+		/*Update all the placeholders on the page*/
+		populateContainers(data);
+
+		/*Then change to the main page*/
+		$.mobile.changePage('#home', { transition: 'slide', changeHash: false });
 	});
 
+	/*Settings menu control*/
+	$('#cleardata').click(function(){
+		console.log("clearing everything!");
+		localStorage.clear();
+		$.mobile.changePage('#setup', { transition: 'slide', changeHash: false });
+	});
 });
+
+
+/*
+   Data Handling Functions
+  =========================
+*/
+
+function heightToInches(feet, inches){
+	return ((feet*12) + +inches);
+}
+
+
+function heightToFeet(inches){
+	var height = {};
+	height.feet = Math.floor(inches/12);
+	height.inches = inches % 12;
+	return height;
+}
+
+
+function populateContainers(data) {
+	try {
+		$(".agecontainer").text(data.age);
+		$(".gendercontainer").text(data.gender);
+		var heightobj = heightToFeet(data.height);
+		$(".heightftcontainer").text(heightobj.feet);
+		$(".heightincontainer").text(heightobj.inches);
+		$(".namecontainer").text(data.name);
+		$(".weightcontainer").text(data.weight);
+	}
+	catch(err) {
+		console.log(err);
+		return false;
+	}
+	return true;
+}
+
+
+function stashData(data) {
+	localStorage.setItem('age',data.age);
+	localStorage.setItem('gender',data.gender);
+	localStorage.setItem('height',data.height);
+	localStorage.setItem('name',data.name);
+	localStorage.setItem('weight',data.weight);
+	return true;
+}
+
+
+function retrieveData() {
+	var data = {};
+	data.age = localStorage.getItem('age');
+	data.gender = localStorage.getItem('gender');
+	data.height = localStorage.getItem('height');
+	data.name = localStorage.getItem('name');
+	data.weight = localStorage.getItem('weight');
+	return data;
+}
+
+
+
+/*
+   Alcohol Calculation Functions
+  ===============================
+*/
+
 
 var BEER = 
 {
@@ -47,6 +151,7 @@ var BEER =
 	"hurricane":"5.9", "olde english":"5.9", "steel reserve":"8.1"
 };
 
+
 var COCKTAILS = 
 {
 	"margarita":["2.5", "40"], "cosmopolitan":["2","37.5"], "martini":["2.25", "37.4"], "vodka + non-alcoholic mixer":["2", "40"], "rum + non-alcoholic mixer":["2","40"],
@@ -54,6 +159,7 @@ var COCKTAILS =
 	"moscow mule":["2","40"], "long island iced tea":["2.5","39.1"], "daquiri or pina colada":["3","40"], "mojito":["2","40"], "bloody mary":["2","40"],
 	"sea/bay breeze":["2","40"], "irish car bomb":["13","6.75"], "jager bomb":["2","35"], "vegas bomb":["2","28"], "mimosa":["6","14"], "malibu bay breeze":["1.5","21"]
 };
+
 
 var SHOTS =
 {

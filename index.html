@@ -14,13 +14,13 @@
 </head>
 <body>
 	<!-- Begin initial setup dialog -->
-	<div data-role="page" id="settings" data-add-back-btn="true">
+	<div data-role="page" id="setup" data-add-back-btn="true">
 		<div data-role="header">
 			<h1>DRINKR</h1>
 		</div>
 		<div data-role="content">
 			<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
-			<form data-transition="pop">
+			<form id="userdata">
 				Name: <input type="text" name="name" id="name"><br>
 
 				<div class="ui-grid-a">
@@ -48,9 +48,9 @@
 						<!-- Gender Picker -->
 						<legend>Gender:</legend>
 						<fieldset data-role="controlgroup" data-type="horizontal">
-							<input type="radio" name="radio-choice-h-2" id="gendermale" value="on" checked="checked">
+							<input type="radio" name="gender" id="gendermale" value="male" checked="checked">
 							<label for="gendermale">Male</label>
-							<input type="radio" name="radio-choice-h-2" id="genderfemale" value="off">
+							<input type="radio" name="gender" id="genderfemale" value="female">
 							<label for="genderfemale">Female</label>
 						</fieldset>
 					</div>
@@ -72,9 +72,8 @@
 						</div>
 					</div>
 				</div>
-
-				<a href="#home" class="ui-btn ui-corner-all" id="initialsubmit" data-transition="pop">Submit</a>
 			</form>
+				<button class="ui-btn ui-corner-all" id="initialsubmit">Submit</a>
 		</div>
 	</div>
 	<!-- End initial setup dialogue -->
@@ -87,7 +86,7 @@
 		</div>
 		<div data-role="content">
 			<form>
-				<h3 class="center-wrapper">Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
+				<h3 class="center-wrapper">Welcome <span class="namecontainer"></span>! Drinkr lets you track your drinking, while still being the life of the party!</h3>
 
 				<!-- Current data -->
 				<div class="ui-grid-b ui-body-a ui-body ui-corner-all center-wrapper">
@@ -323,12 +322,12 @@
 		<div class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-inherit ui-panel-animate ui-panel-open" data-role="panel" id="panel-push" data-display="push">
 			<div class="ui-panel-inner"><ul class="ui-listview" data-role="listview">
 				<li class="ui-first-child" data-icon="delete"><a class="ui-btn ui-btn-icon-right ui-icon-delete" href="#" data-rel="close">Close</a></li>
-				<li><a class="ui-btn" href="#">Change Age ()</a></li>
-				<li><a class="ui-btn" href="#">Change Gender ()</a></li>
-				<li><a class="ui-btn" href="#">Change Height ()</a></li>
-				<li><a class="ui-btn" href="#">Change Name ()</a></li>
-				<li><a class="ui-btn" href="#">Change Weight ()</a></li>
-			</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
+				<li><a class="ui-btn" id="agechanger">Change Age (<span class="agecontainer"></span>)</a></li>
+				<li><a class="ui-btn" id="genderchanger">Change Gender (<span class="gendercontainer"></span>)</a></li>
+				<li><a class="ui-btn" id="heightchanger">Change Height (<span class="heightftcontainer"></span>'<span class="heightincontainer"></span>")</a></li>
+				<li><a class="ui-btn" id="namechanger">Change Name (<span class="namecontainer"></span>)</a></li>
+				<li><a class="ui-btn" id="weightchanger">Change Weight (<span class="weightcontainer"></span>)</a></li>
+			</ul><br><br><button class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-left" id="cleardata">Clear all data!!!</button></div>
 			<!-- End pop out settings -->
 
 		</div>
