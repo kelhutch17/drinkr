@@ -116,11 +116,13 @@
 					<h2>Recent Drinks:</h2>
 					<p id="recenttext" style="font-style: italic">No Drinks... Step it up!</p>
 					<div id="recenttable">
-						<table data-role="table" data-filter="true" data-input="#filterTable-input" class="ui-responsive" >
+						<table id="recentdrinks" data-role="table" data-filter="true" data-input="#filterTable-input" class="ui-responsive" >
 							<thead>
 								<tr>
 									<th>Drink type</th>
-									<th>Strenght</th>
+									<th>Name</th>
+									<th>Size</th>
+									<th>% Alcohol</th>
 									<th>Drink time</th>
 								</tr>
 							</thead>
@@ -148,8 +150,8 @@
 						</div>
 						<div class="ui-body ui-body-a">
 							<div style="left-wrapper">
-								<label for="select-native-1">Size*:</label>
-								<select name="select-native-1" id="select-native-1">
+								<label for="beersize">Size*:</label>
+								<select name="beersize" id="beersize">
 									<option value="7.7">Glass (7.7 fl oz)</option>
 									<option value="12">Can (12 fl oz)</option>
 									<option value="16">Pint (16 fl oz)</option>
@@ -165,8 +167,8 @@
 
 							<!-- Beer brand picker -->
 							<div class="left-wrapper">
-								<label for="select-native-1">Beer:</label>
-								<select name="select-native-1" id="select-native-1">
+								<label for="beername">Beer:</label>
+								<select name="beername" id="beername">
 									<option value="0" data-placeholder="true">Select One</option>
 									<option value="bud light">Bud Light</option>
 									<option value="miller light">Miller Light</option>
@@ -177,28 +179,28 @@
 									<option value="pbr">PBR</option>
 									<option value="natural light">Natural Light</option>
 									<option value="guiness">Guiness</option>
-									<option value=">stella artois">Stella Artois</option>
-									<option value=">samuel adams">Samuel Adams</option>
-									<option value=">red stripe">Red Stripe</option>
-									<option value=">bass">Bass</option>
-									<option value=">rolling rock">Rolling Rock</option>
-									<option value=">busch">Busch</option>
-									<option value=">beck's">Beck's</option>
-									<option value=">hoegaarden">Hoegaarden</option>
-									<option value=">hefeweisen">Hefeweisen</option>
-									<option value=">keystone light">Keystone Light</option>
-									<option value=">miller high life">Miller High Life</option>
-									<option value=">corona">Corona</option>
-									<option value=">corona light">Corona Light</option>
-									<option value=">angry orchard">Angry Orchard</option>
-									<option value=">redd's apple ale">Redd's Apple Ale</option>
-									<option value=">woodchuck hard cider">Woodchuck Hard Cider</option>
-									<option value=">magner's vintage cider">Magner's Vintage Cider</option>
-									<option value=">mike's hard lemonade">Mike's Hard Lemonade</option>
-									<option value=">colt 45">Colt 45</option>
-									<option value=">hurricane">Hurricane</option>
-									<option value=">olde english">Olde English</option>
-									<option value=">steele reserve">Steele Reserve</option>
+									<option value="stella artois">Stella Artois</option>
+									<option value="samuel adams">Samuel Adams</option>
+									<option value="red stripe">Red Stripe</option>
+									<option value="bass">Bass</option>
+									<option value="rolling rock">Rolling Rock</option>
+									<option value="busch">Busch</option>
+									<option value="beck's">Beck's</option>
+									<option value="hoegaarden">Hoegaarden</option>
+									<option value="hefeweisen">Hefeweisen</option>
+									<option value="keystone light">Keystone Light</option>
+									<option value="miller high life">Miller High Life</option>
+									<option value="corona">Corona</option>
+									<option value="corona light">Corona Light</option>
+									<option value="angry orchard">Angry Orchard</option>
+									<option value="redd's apple ale">Redd's Apple Ale</option>
+									<option value="woodchuck hard cider">Woodchuck Hard Cider</option>
+									<option value="magner's vintage cider">Magner's Vintage Cider</option>
+									<option value="mike's hard lemonade">Mike's Hard Lemonade</option>
+									<option value="colt 45">Colt 45</option>
+									<option value="hurricane">Hurricane</option>
+									<option value="olde english">Olde English</option>
+									<option value="steele reserve">Steele Reserve</option>
 								</select>
 							</div>
 							<!-- End beer brand picker -->
@@ -209,10 +211,11 @@
 
 							<div style="margin-left:auto; margin-right:auto;" class="center-wrapper;">
 								<legend >%ABV:</legend>
-								<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="4" min="2"max="12"> 
+								<input type="text" data-mini="true" data-role="spinbox" name="beerabv" id="beerabv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" min="2" max="12"> 
 							</div>
 
 						</div>
+						<div class="ui-btn ui-input-btn ui-corner-all ui-shadow" id="beersubmit">Drink it!</div>
 					</div>
 					<!-- End beer -->
 
@@ -226,7 +229,7 @@
 								<div class="ui-block-b">
 									<div class="ui-block-a" style="display:inline-block; position:relative;">
 										<legend># Shots in Drink:</legend>
-										<input type="text" data-mini="true" data-role="spinbox" name="numShots" id="numShots" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="2" min="1"max="10" style="text-align: center;"> 
+										<input type="text" data-mini="true" data-role="spinbox" name="numShots" id="cocktailshots" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="2" min="1" max="10" style="text-align: center;"> 
 									</div>
 								</div>
 							</div>
@@ -236,8 +239,8 @@
 
 							<!-- Cocktail picker -->
 							<div class="ui-field-contain">
-								<label for="select-native-1">Common Drinks:</label>
-								<select name="select-native-1" id="select-native-1">
+								<label for="cocktailname">Common Drinks:</label>
+								<select name="cocktailname" id="cocktailname">
 									<option value="0" data-placeholder="true">Select One</option>
 									<option value="margarita">Margarita</option>
 									<option value="cosmopolitan">Cosmopolitan</option>
@@ -263,6 +266,7 @@
 							</div>
 							<!-- End coctail picker -->
 						</div>
+						<div class="ui-btn ui-input-btn ui-corner-all ui-shadow" id="cocktailsubmit">Drink it!</div>
 					</div>
 					<!-- End cocktail -->
 
@@ -274,22 +278,22 @@
 						<div class="ui-body ui-body-a">
 							<div>
 								<legend># Shots:</legend>
-								<div style="display:inline";>
-									<input type="text" data-mini="true" data-role="spinbox" name="weight" id="weight" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="1" min="1"max="3" style="text-align: center; width: 40px;"> 
+								<div style="display:inline;">
+									<input type="text" data-mini="true" data-role="spinbox" name="weight" id="shots" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="1" min="1" max="3" style="text-align: center; width: 40px;"> 
 								</div>
 							</div>
 							<div class="ui-grid-a">
 								<div class="ui-block-b" style="display:inline-block; position:relative;">
 									<legend>Proof of Shot:</legend>
-									<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="80" min="10"max="200" style="text-align: center;"> 
+									<input type="text" data-mini="true" data-role="spinbox" name="shotabv" id="shotabv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="80" min="10" max="200" style="text-align: center;"> 
 								</div>
 							</div>
 							<div class="center-wrapper">
 								-or-
 							</div>
 							<!-- Shot picker -->
-							<label for="select-native-1">Common Shots:</label>
-							<select name="select-native-1" id="select-native-1">
+							<label for="shotname">Common Shots:</label>
+							<select name="shotname" id="shotname">
 								<option value="0" data-placeholder="true">Select One</option>
 								<option value="kamikaze">Kamikaze</option>
 								<option value="lemon drop">Lemon Drop</option>
@@ -309,10 +313,11 @@
 							</select>
 							<!-- End shot picker -->
 						</div>
+						<div class="ui-btn ui-input-btn ui-corner-all ui-shadow" id="shotsubmit">Drink it!</div>
 					</div>
 					<!-- End shot -->
 				</div>
-				<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">Drink it!</div>
+				
 			</form>
 		</div>
 
