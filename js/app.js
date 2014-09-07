@@ -36,15 +36,15 @@ $(document).on( "pagecreate", function() {
 
 var BEER = 
 {
-	"Bud Light":"4.2%", "Miller Light":"4.2%", "Yuengling":"4.4%",
-	"Yuengling Light":"3.5%", "Coors Light":"4.2%", "Heineken":"5%",
-	"PBR":"4.74%", "Natural Light":"4.2%", "Guiness":"4.3%", "Stella Artois":"5.2%",
-	"Samuel Adams":"4.9%", "Red Stripe":"4.7%", "Bass":"5%", "Rolling Rock":"4.4%",
-	"Busch":"4.1%", "Beck's":"4.9%", "Hoegaarden":"4.9%", "Hefeweizen":"4.9%",
-	"Keystone Light":"4.2%", "Miller High Life":"5%", "Corona":"4.6%", "Corona Light":"4.5%",
-	"Angry Orchard":"5%", "Redd's Apple Ale":"5%", "Woodchuck Hard Cider":"5%", 
-	"Magner's Vintage Cider":"4.5%", "Mike's Hard Lemonade":"5%", "Colt 45":"6.5%", 
-	"Hurricane":"5.9%", "Olde English":"5.9%", "Steel Reserve":"8.1%"
+	"Bud Light":"4.2", "Miller Light":"4.2", "Yuengling":"4.4",
+	"Yuengling Light":"3.5", "Coors Light":"4.2", "Heineken":"5",
+	"PBR":"4.74", "Natural Light":"4.2", "Guiness":"4.3", "Stella Artois":"5.2",
+	"Samuel Adams":"4.9", "Red Stripe":"4.7", "Bass":"5", "Rolling Rock":"4.4",
+	"Busch":"4.1", "Beck's":"4.9", "Hoegaarden":"4.9", "Hefeweizen":"4.9",
+	"Keystone Light":"4.2", "Miller High Life":"5", "Corona":"4.6", "Corona Light":"4.5",
+	"Angry Orchard":"5", "Redd's Apple Ale":"5", "Woodchuck Hard Cider":"5", 
+	"Magner's Vintage Cider":"4.5", "Mike's Hard Lemonade":"5", "Colt 45":"6.5", 
+	"Hurricane":"5.9", "Olde English":"5.9", "Steel Reserve":"8.1"
 };
 
 var COCKTAILS = 
@@ -57,7 +57,9 @@ var COCKTAILS =
 
 var SHOTS =
 {
-
+	"kamikaze":["2","37.5"], "lemon drop":["1.5","40"], "redheaded slut":["2","29"], "vodka":["1.5","40"], "rum":["1.5","40"], "gin":["1.5","47.3"],
+	"whiskey":["1.5","45"], "tequila":["1.5","40"], "fireball":["1.5","33"], "dirty girl scout":["4","22.8"], "washington apple":[".75","30"],
+	"alabama slammer":["1.5","33.3"], "blow job":[".75","24.3"], "fourth of july":["1","27.5"]
 };
 
 
