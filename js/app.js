@@ -60,12 +60,9 @@ var SHOTS =
 
 };
 
-function solveBAC(form) {
-var message;
-var ounces = eval(form.ounces.value);
-var percent = eval(form.percent.value);
-var weight = eval(form.weight.value);
-var hours = eval(form.hours.value);
 
-var result = (ounces * percent * 0.075 / weight) - (hours * 0.015);
-result = Math.round(result * 1000) / 1000;
+function solveBAC(ounces, percent, weight, hours) {
+	var result = (ounces * percent * 0.075 / weight) - (hours * 0.015);
+	result = Math.round(result * 1000) / 1000;
+	return result
+}
