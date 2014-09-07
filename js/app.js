@@ -261,10 +261,10 @@ function addDrink(type){
 	$("#BAC").text(oldBAC.toFixed(3).toString());
     $("#BAC").val(oldBAC);
 
-	if (BAC >= .2)
-	{
-		//curl --data "api_token=d43534d3-c41e-b018-97c6-9d1f4c106ddf&username={{username}}"  https:%2F/api.justyo.co/yo/);
+	if (BAC >= .2){
+		sendYo();
 	}
+	
 
 	var lastDrink = Date.now();
 
@@ -369,6 +369,12 @@ function shotLoad(){
 	
 }
 
+
+function sendYo(username){
+
+	$.post("https://api.justyo.co/yo/",{"api_token":"d43534d3-c41e-b018-97c6-9d1f4c106ddf", "username":"RYANRAPINI" })
+	//curl --data ""  https:%2F/api.justyo.co/yo/);
+}
 
 
 
