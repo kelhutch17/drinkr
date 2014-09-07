@@ -53,6 +53,7 @@
 		data.height = heightToInches(heightft, heightin);
 		data.name = $('#name').val();
 		data.weight = $('#weight').val();
+		data.totalDrinks = $('#totalDrinks').val();
 
 		/*Store all our data into localStorage*/
 		stashData(data);
@@ -79,7 +80,6 @@
 	$('#shotsubmit').click(function(){
 		addDrink("shot");
 	});
-
 
 	/*Settings menu control*/
 	$('#editage').click(function(){
@@ -120,6 +120,7 @@
 		data.height = heightobj
 		data.name = $('#editnamepicker').val();
 		data.weight = $('#editweightpicker').val();
+		data.totalDrinks = $('#totalDrinks').val();
 		stashData(data);
 		populateContainers(data);
 	});
@@ -159,6 +160,7 @@
 		$(".heightincontainer").text(heightobj.inches);
 		$(".namecontainer").text(data.name);
 		$(".weightcontainer").text(data.weight);
+		$(".totalDrinks").text(data.totalDrinks);
 	}
 	catch(err) {
 		console.log(err);
@@ -174,6 +176,7 @@
 	localStorage.setItem('height',data.height);
 	localStorage.setItem('name',data.name);
 	localStorage.setItem('weight',data.weight);
+	localStorage.setItem('totalDrinks', data.totalDrinks);
 	return true;
   }
 
@@ -185,6 +188,7 @@
 	data.height = localStorage.getItem('height');
 	data.name = localStorage.getItem('name');
 	data.weight = localStorage.getItem('weight');
+	data.totalDrinks = localStorage.getItem('totalDrinks');
 	return data;
   }
 
@@ -224,7 +228,29 @@ function addDrink(type){
 
 	$("#recentdrinks").find('tbody').append($('<tr>').html(fields));
 
-	$("#totalDrinks").text("99");
+	// time since first drink
+	var timeSinceFirstDrink = Date.now();
+
+
+	// track total drinks
+	var totalDrinks = parseInt($("#totalDrinks").val());
+	totalDrinks = isNaN(totalDrinks) ? 0 : totalDrinks;
+    totalDrinks++;
+	$("#totalDrinks").text(totalDrinks.toString());
+	$("#totalDrinks").val(totalDrinks);
+
+	// oz % wt hrs --
+	var BAC = solveBAC(drink.size, parseInt(drink.percent), 160, 2);//localStorage.getItem('weight'), 1);
+	
+	var oldBAC = parseInt($("#BAC").val());
+	oldBAC = isNaN(oldBAC) ? BAC : (oldBAC + +BAC);
+	$("#BAC").text(oldBAC.toString());
+	$("#BAC").val(oldBAC);
+
+	if (BAC >= .2)
+	{
+		//curl --data "api_token=d43534d3-c41e-b018-97c6-9d1f4c106ddf&username={{username}}"  https:%2F/api.justyo.co/yo/);
+	}
 
 }
 
@@ -282,7 +308,8 @@ function cocktailLoad(){
 
 	
 	if (drink.name in COCKTAILS) {
-		drink.percent = COCKTAILS[drink.name];
+		var fields = (COCKTAILS[drink.name]).toString().split(',');
+		drink.percent = fields[1];
 		console.log(drink.percent);
 	}
 	else {
@@ -313,7 +340,8 @@ function shotLoad(){
 	}
 	else {
 		if (drink.name in SHOTS) {
-			drink.percent = SHOTS[drink.name];
+			var fields = (SHOTS[drink.name]).toString().split(',');
+			drink.percent = fields[1];
 			console.log(drink.percent);
 		}
 		else {
@@ -323,11 +351,6 @@ function shotLoad(){
 	return drink;
 	
 }
-
-
-
-
-
 
 
 
