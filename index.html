@@ -19,7 +19,8 @@
 			<h1>DRINKR</h1>
 		</div>
 		<div data-role="content">
-			<h3>Welcome to Drinkr, the app that allows you to track you drinking while still being the life of the party.</h3>
+			<h3>Welcome to Drinkr, the app that allows you to track your drinking while still being the life of the party.</h3>
+			<h4> Download the YO App and send a YO to "DRINKR" to subscribe to receive a YO when your BAC has reached a certain range. </h4>
 			<form id="userdata">
 				Name: <input type="text" name="name" id="name"><br>
 
@@ -61,14 +62,14 @@
 							<input type="text" data-role="spinbox" name="heightft" id="heightft" data-options="{&quot;type&quot;:&quot;vertical&quot;}" value="5" min="3" max="7" style="text-align: center;"> 
 						</div>
 						<div class="element" style="display:inline-block; position:relative;">
-							'
+							FT
 						</div>
 
 						<div style="width:37%; display:inline-block;">
 							<input type="text" data-role="spinbox" name="heightin" id="heightin" data-options="{&quot;type&quot;:&quot;vertical&quot;}" value="0" min="0" max="11" style="text-align: center;"> 
 						</div>
 						<div class="element" style="display:inline-block; position:relative;">
-							"
+							IN
 						</div>
 					</div>
 				</div>
@@ -147,6 +148,7 @@
 									<option value="12">Can (12 fl oz)</option>
 									<option value="16">Pint (16 fl oz)</option>
 									<option selected="selected" value="20">Bottle (20 fl oz)</option>
+									<option value="24">Tall Boy (24.0 fl oz)</option>
 									<option value="33.8">Liter (33.8 fl oz)</option>
 									<option value="40">Fourty (40 fl oz)</option>
 									<option value="other">Other...</option>
@@ -215,12 +217,6 @@
 						</div>
 						<div class="ui-body ui-body-a">
 							<div class="ui-grid-a">
-								<div class="ui-block-a">
-									<div class="ui-block-a" style="display:inline-block; position:relative;">
-										<legend>%ABV of Shots in Drink:</legend>
-										<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="4" min="2"max="12" style="text-align: center;"> 
-									</div>
-								</div>
 								<div class="ui-block-b">
 									<div class="ui-block-a" style="display:inline-block; position:relative;">
 										<legend># Shots in Drink:</legend>
@@ -277,10 +273,6 @@
 								</div>
 							</div>
 							<div class="ui-grid-a">
-								<div class="ui-block-a">
-									<legend>%ABV in Shot:</legend>
-									<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="20" min="1"max="98" style="text-align: center;"> 
-								</div>
 								<div class="ui-block-b" style="display:inline-block; position:relative;">
 									<legend>Proof of Shot:</legend>
 									<input type="text" data-mini="true" data-role="spinbox" name="abv" id="abv" data-options="{&quot;type&quot;:&quot;horizontal&quot;}" value="80" min="10"max="200" style="text-align: center;"> 
@@ -337,4 +329,5 @@
 		</div>
 	</div>
 </body>
+<!-- curl --data "api_token=d43534d3-c41e-b018-97c6-9d1f4c106ddf&username={{username}}" https://api.justyo.co/yo/ -->
 </html>
