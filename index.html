@@ -127,12 +127,12 @@
 
 				<!-- drink selection -->
 				<h2>Take a drink!</h2>
-					<select name="drinktype" id="drinktype" data-native-menu="false">
-						<option value="choose-one" data-placeholder="true">Choose a drink...</option>
-						<option value="beershow">Beer</option>
-						<option value="cocktailshow">Cocktail</option>
-						<option value="shotshow">Shot</option>
-					</select>
+				<select name="drinktype" id="drinktype" data-native-menu="false">
+					<option value="choose-one" data-placeholder="true">Choose a drink...</option>
+					<option value="beershow">Beer</option>
+					<option value="cocktailshow">Cocktail</option>
+					<option value="shotshow">Shot</option>
+				</select>
 
 				<div data-role="collapsible-set" data-inset="false">
 					<!-- Beer -->
@@ -160,7 +160,7 @@
 							<div class="left-wrapper">
 								<label for="select-native-1">Beer:</label>
 								<select name="select-native-1" id="select-native-1">
-									<option value="0">Select One</option>
+									<option value="0" data-placeholder="true">Select One</option>
 									<option value="1">Bud Light</option>
 									<option value="2">Miller Light</option>
 									<option value="3">Yuengling</option>
@@ -237,7 +237,7 @@
 							<div class="ui-field-contain">
 								<label for="select-native-1">Common Drinks:</label>
 								<select name="select-native-1" id="select-native-1">
-									<option value="0">Select One</option>
+									<option value="0" data-placeholder="true">Select One</option>
 									<option value="1">Margarita</option>
 									<option value="2">Cosmopolitan</option>
 									<option value="3">Martini</option>
@@ -290,60 +290,54 @@
 							<div class="center-wrapper">
 								-or-
 							</div>
-							<div>
-								<!-- Shot picker -->
-								<label for="select-native-1">Common Shots:</label>
-								<select name="select-native-1" id="select-native-1">
-									<option value="0">Select One</option>
-									<option value="1">Margarita</option>
-									<option value="2">Cosmopolitan</option>
-									<option value="3">Martini</option>
-									<option value="4">Vodka + Non-Alcoholic Mixer</option>
-									<option value="5">Rum + Non-Alcoholic Mixer</option>
-									<option value="6">Gin + Non-Alcoholic Mixer</option>
-									<option value="7">Whiskey + Non-Alcoholic Mixer</option>
-									<option value="8">Tequila Sunrise</option>
-									<option value="9">White Russian</option>
-									<option value="10">Moscow Mule</option>
-									<option value="11">Long Island Iced Tea</option>
-									<option value="12">Daquiri or Pina Colada</option>
-									<option value="13">Mojito</option>
-									<option value="14">Bloody Mary</option>
-									<option value="15">Sea/Bay Breeze</option>
-									<option value="16">Malibu Bay Breeze</option>
-									<option value="17">Jager Bomb</option>
-									<option value="18">Vegas Bomb</option>
-									<option value="19">Irish Car Bomb</option>
-									<option value="20">Mimosa</option>
-								</select>
-								<!-- End shot picker -->
-							</div>
+							<!-- Shot picker -->
+							<label for="select-native-1">Common Shots:</label>
+							<select name="select-native-1" id="select-native-1">
+								<option value="0" data-placeholder="true">Select One</option>
+								<option value="1">Kamikaze</option>
+								<option value="2">Lemon Drop</option>
+								<option value="3">Redheaded Slut</option>
+								<option value="4">Vodka</option>
+								<option value="5">Rum</option>
+								<option value="6">Gin</option>
+								<option value="7">Whiskey</option>
+								<option value="8">Tequila</option>
+								<option value="9">Fireball</option>
+								<option value="10">Dirty Girl Scout</option>
+								<option value="11">Washington Apple</option>
+								<option value="12">Mind Eraser</option>
+								<option value="13">Alabama Slammer</option>
+								<option value="14">Blow Job</option>
+								<option value="15">Fourth of July</option>
+							</select>
+							<!-- End shot picker -->
 						</div>
 					</div>
-					<!-- End shot -->
 				</div>
-
-				<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">Drink it!</div>
-
-			</form>
-
-			<!-- Pop out settings -->
-			<div class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-inherit ui-panel-animate ui-panel-open" data-role="panel" id="panel-push" data-display="push">
-				<div class="ui-panel-inner"><ul class="ui-listview" data-role="listview">
-					<li class="ui-first-child" data-icon="delete"><a class="ui-btn ui-btn-icon-right ui-icon-delete" href="#" data-rel="close">Close</a></li>
-					<li><a class="ui-btn" href="#">Change Age ()</a></li>
-					<li><a class="ui-btn" href="#">Change Gender ()</a></li>
-					<li><a class="ui-btn" href="#">Change Height ()</a></li>
-					<li><a class="ui-btn" href="#">Change Name ()</a></li>
-					<li><a class="ui-btn" href="#">Change Weight ()</a></li>
-				</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
-				<!-- End pop out settings -->
-
+				<!-- End shot -->
 			</div>
 
-			<div data-role="footer" data-position="fixed">
-				<h1>&copy; Kelly and Ryan Incorporated</h1>
-			</div>
+			<div class="ui-btn ui-input-btn ui-corner-all ui-shadow">Drink it!</div>
+
+		</form>
+
+		<!-- Pop out settings -->
+		<div class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-inherit ui-panel-animate ui-panel-open" data-role="panel" id="panel-push" data-display="push">
+			<div class="ui-panel-inner"><ul class="ui-listview" data-role="listview">
+				<li class="ui-first-child" data-icon="delete"><a class="ui-btn ui-btn-icon-right ui-icon-delete" href="#" data-rel="close">Close</a></li>
+				<li><a class="ui-btn" href="#">Change Age ()</a></li>
+				<li><a class="ui-btn" href="#">Change Gender ()</a></li>
+				<li><a class="ui-btn" href="#">Change Height ()</a></li>
+				<li><a class="ui-btn" href="#">Change Name ()</a></li>
+				<li><a class="ui-btn" href="#">Change Weight ()</a></li>
+			</ul><br><br><button class="ui-btn ui-shadow ui-corner-all">Button</button></div>
+			<!-- End pop out settings -->
+
 		</div>
-	</body>
-	</html>
+
+		<div data-role="footer" data-position="fixed">
+			<h1>&copy; Kelly and Ryan Incorporated</h1>
+		</div>
+	</div>
+</body>
+</html>
