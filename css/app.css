@@ -18,7 +18,9 @@ div.ui-select {
 
 }
 
-
+.ui-submit-button {
+	background-color: #AEE5B0 !important;
+}
 
 ::selection {
 	background: #F357A1 !important;

@@ -1,6 +1,5 @@
 /* Custom Javascript for this PhoneGap APP */
-
-$(document).on( "mobileinit", function() {
+$(document).on("mobileinit", function () {
 	console.log("Initialize jQuery Mobile Phonegap Enhancement Configurations")
 	// Make your jQuery Mobile framework configuration changes here!
 	$.mobile.allowCrossDomainPages = true;
@@ -8,15 +7,12 @@ $(document).on( "mobileinit", function() {
 	$.mobile.buttonMarkup.hoverDelay = 0;
 	$.mobile.pushStateEnabled = false;
 	$.mobile.defaultPageTransition = "none";
-
 });
 
-
 $(document).on( "pagecreate", function() {
-
 	$('#drinktype').on('change', function () {
 		var $this = $(this),
-			val = $this.val()
+		val = $this.val()
 
 		switch(val) {
 			case "beershow":
@@ -30,29 +26,33 @@ $(document).on( "pagecreate", function() {
 		} 
 	});
 
-	$("#recenttable").hide();
+	$('#recenttable').hide();
+
+	$('#initialsubmit').click(function({
+		
+	});
 
 });
 
 var BEER = 
 {
-	"Bud Light":"4.2", "Miller Light":"4.2", "Yuengling":"4.4",
-	"Yuengling Light":"3.5", "Coors Light":"4.2", "Heineken":"5",
-	"PBR":"4.74", "Natural Light":"4.2", "Guiness":"4.3", "Stella Artois":"5.2",
-	"Samuel Adams":"4.9", "Red Stripe":"4.7", "Bass":"5", "Rolling Rock":"4.4",
-	"Busch":"4.1", "Beck's":"4.9", "Hoegaarden":"4.9", "Hefeweizen":"4.9",
-	"Keystone Light":"4.2", "Miller High Life":"5", "Corona":"4.6", "Corona Light":"4.5",
-	"Angry Orchard":"5", "Redd's Apple Ale":"5", "Woodchuck Hard Cider":"5", 
-	"Magner's Vintage Cider":"4.5", "Mike's Hard Lemonade":"5", "Colt 45":"6.5", 
-	"Hurricane":"5.9", "Olde English":"5.9", "Steel Reserve":"8.1"
+	"bud light":"4.2", "miller light":"4.2", "yuengling":"4.4",
+	"yuengling light":"3.5", "coors light":"4.2", "heineken":"5",
+	"pbr":"4.74", "natural light":"4.2", "guiness":"4.3", "stella artois":"5.2",
+	"samuel adams":"4.9", "red stripe":"4.7", "bass":"5", "rolling rock":"4.4",
+	"busch":"4.1", "beck's":"4.9", "hoegaarden":"4.9", "hefeweizen":"4.9",
+	"keystone light":"4.2", "miller high life":"5", "corona":"4.6", "corona light":"4.5",
+	"angry orchard":"5", "redd's apple ale":"5", "woodchuck hard cider":"5", 
+	"magner's vintage cider":"4.5", "mike's hard lemonade":"5", "colt 45":"6.5", 
+	"hurricane":"5.9", "olde english":"5.9", "steel reserve":"8.1"
 };
 
 var COCKTAILS = 
 {
-	"margarita":["2.5", "40"], "cosmopolitan":["2","37.5"], "martini":["2.25", "37.4"], "Vodka + Non-Alcoholic Mixer":["2", "40"], "Rum + Non-Alcoholic Mixer":["2","40"],
-	"Gin + Non-Alcoholic Mixer":["2","47.3"], "Whiskey + Non-Alcoholic Mixer":["2","42.5"], "Tequila Sunrise":["1.5","38"], "White Russian":["3","33.4"],
-	"Moscow Mule":["2","40"], "Long Island Iced Tea":["2.5","39.1"], "Daquiri or Pina Colada":["3","40"], "Mojito":["2","40"], "Bloody Mary":["2","40"],
-	"Sea/Bay Breeze":["2","40"], "Irish Car Bomb":["13","6.75"], "Jager Bomb":["2","35"], "Vegas Bomb":["2","28"], "Mimosa":["6","14"], "Malibu Bay Breeze":["1.5","21"]
+	"margarita":["2.5", "40"], "cosmopolitan":["2","37.5"], "martini":["2.25", "37.4"], "vodka + non-alcoholic mixer":["2", "40"], "rum + non-alcoholic mixer":["2","40"],
+	"gin + non-alcoholic mixer":["2","47.3"], "whiskey + non-alcoholic mixer":["2","42.5"], "tequila sunrise":["1.5","38"], "white russian":["3","33.4"],
+	"moscow mule":["2","40"], "long island iced tea":["2.5","39.1"], "daquiri or pina colada":["3","40"], "mojito":["2","40"], "bloody mary":["2","40"],
+	"sea/bay breeze":["2","40"], "irish car bomb":["13","6.75"], "jager bomb":["2","35"], "vegas bomb":["2","28"], "mimosa":["6","14"], "malibu bay breeze":["1.5","21"]
 };
 
 var SHOTS =
